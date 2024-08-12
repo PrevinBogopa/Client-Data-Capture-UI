@@ -6,7 +6,13 @@ function ClientList() {
 
     useEffect(() => {
         axios.get('http://localhost:8080/clients')
-            .then(response => setClients(response.data))
+            .then(response => {
+                if (response.data && Array.isArray(response.data)) {
+                    setClients(response.data); // Ensure data is set correctly
+                } else {
+                    console.error('Unexpected data format:', response.data);
+                }
+            })
             .catch(error => console.error('Error fetching clients:', error));
     }, []);
 
@@ -27,7 +33,7 @@ function ClientList() {
                             <tr key={client.id}>
                                 <td className="text-left py-2 px-4 border-b">{client.name}</td>
                                 <td className="text-left py-2 px-4 border-b">{client.client_code}</td>
-                                <td className="text-center py-2 px-4 border-b">{client.contacts_count}</td>
+                                <td className="text-center py-2 px-4 border-b">0</td> {/* Assuming 0 contacts for now */}
                             </tr>
                         ))}
                     </tbody>
