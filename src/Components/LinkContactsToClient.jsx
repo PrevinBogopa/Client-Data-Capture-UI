@@ -40,7 +40,7 @@ function LinkContactsToClient() {
         })
         .then(response => alert('Contacts successfully linked!'))
         .catch(error => {
-            console.error('Error linking contacts:', error);
+            console.error('Error linking clients:', error);
             alert('There was an error linking the contacts. Please try again.');
         });
     };
@@ -48,7 +48,7 @@ function LinkContactsToClient() {
 
     return (
         <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4">Link Contacts to Client</h1>
+            <h1 className="text-2xl font-bold mb-4">Link Client to Contacts </h1>
             {loading ? (
                 <p>Loading...</p>
             ) : (
@@ -64,7 +64,7 @@ function LinkContactsToClient() {
                             <option value="">Select a client...</option>
                             {clients.map(client => (
                                 <option key={client.id} value={client.id}>
-                                    {client.name} ({client.client_code})
+                                   {client.client_code}
                                 </option>
                             ))}
                         </select>
@@ -93,7 +93,7 @@ function LinkContactsToClient() {
                         onClick={handleLink}
                         className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     >
-                        Link Contacts
+                        Link Clients
                     </button>
                 </>
             )}

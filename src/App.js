@@ -6,8 +6,8 @@ import ClientForm from './Components/ClientForm';
 
 import ContactList from './Components/ContactList';
 import ContactForm from './Components/ContactForm';
-import LinkContactsToClient from './Components/LinkContactsToClient';
-
+import LinkContactsToClient from './Components/LinkClientsToContacts';
+import LinkClientsToContacts from './Components/LinkContactsToClient';
 import Navbar from './Components/Navbar';
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
                     <Route path="/contacts" element={<ContactList />} />
                     <Route path="/create-contact" element={<ContactForm />} />
                     <Route path="/link-contacts" element={<LinkContactsToClient />} />
+                    <Route path="/link-clients" element={<LinkClientsToContacts />} />
                 </Routes>
             </div>
         </Router>

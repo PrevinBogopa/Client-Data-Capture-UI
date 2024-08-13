@@ -8,7 +8,7 @@ function ContactList() {
         axios.get('http://localhost:8080/contacts')
             .then(response => {
                 if (response.data && Array.isArray(response.data)) {
-                    setContacts(response.data);
+                    setContacts(response.data); // Ensure data is set correctly
                 } else {
                     console.error('Unexpected data format:', response.data);
                 }
@@ -23,19 +23,21 @@ function ContactList() {
                 <table className="min-w-full bg-white">
                     <thead>
                         <tr>
+                        <th className="text-left py-2 px-4 border-b">Surname</th>
                             <th className="text-left py-2 px-4 border-b">Name</th>
-                            <th className="text-left py-2 px-4 border-b">Surname</th>
+                       
                             <th className="text-left py-2 px-4 border-b">Email</th>
-                            <th className="text-center py-2 px-4 border-b">No. of Clients</th>
+                            <th className="text-center py-2 px-4 border-b">Linked Clients</th>
                         </tr>
                     </thead>
                     <tbody>
                         {contacts.map(contact => (
                             <tr key={contact.id}>
-                                <td className="text-left py-2 px-4 border-b">{contact.name}</td>
-                                <td className="text-left py-2 px-4 border-b">{contact.surname}</td>
+                                      <td className="text-left py-2 px-4 border-b">  {contact.surname}</td>
+                                <td className="text-left py-2 px-4 border-b">{contact.name} </td>
+                          
                                 <td className="text-left py-2 px-4 border-b">{contact.email}</td>
-                                <td className="text-center py-2 px-4 border-b">0</td> {/* Assuming 0 clients for now */}
+                                <td className="text-center py-2 px-4 border-b">{contact.linked_clients_count}</td>
                             </tr>
                         ))}
                     </tbody>

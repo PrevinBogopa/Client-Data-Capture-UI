@@ -10,7 +10,8 @@ function Navbar() {
                     <Link to="/create-client" className="mr-6">Create Client</Link>
                     <Link to="/contacts" className="mr-6">Contacts</Link>
                     <Link to="/create-contact" className="mr-6">Create Contact</Link>
-                    <Link to="/link-contacts" className="mr-6">Link Contacts</Link>
+                    <Link to="/link-contacts" className="mr-6">Link  Contacts</Link>
+                    <Link to="/link-clients" className="mr-6">Link Clients</Link>
                 </div>
             </div>
         </nav>
