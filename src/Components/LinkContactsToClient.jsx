@@ -38,7 +38,7 @@ function LinkContactsToClient() {
             contact_email: selectedContacts.map(contactId => 
                 contacts.find(contact => contact.id === contactId).email) // Convert IDs to emails
         })
-        .then(response => alert('Contacts successfully linked!'))
+        .then(response => alert('Clients successfully linked!'))
         .catch(error => {
             console.error('Error linking clients:', error);
             alert('There was an error linking the contacts. Please try again.');
