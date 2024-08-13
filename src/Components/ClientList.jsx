@@ -53,7 +53,7 @@ function LinkedContacts({ clients }) {
                             <th className="text-left py-2 px-4 border-b">Client Name</th>
                             <th className="text-left py-2 px-4 border-b">Contact Name</th>
                             <th className="text-left py-2 px-4 border-b">Contact Email</th>
-                            <th className="text-left py-2 px-4 border-b">Actions</th>
+                          
                         </tr>
                     </thead>
                     <tbody>
@@ -143,7 +143,7 @@ function ClientList() {
                 )}
             </div>
             <LinkClients />
-            {/* Linked Contacts Table */}
+          
             <LinkedContacts clients={clients} />
         </div>
     );
