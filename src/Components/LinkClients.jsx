@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function LinkContactsToClient() {
+function LinkClients() {
     const [clients, setClients] = useState([]);
     const [contacts, setContacts] = useState([]);
     const [selectedClient, setSelectedClient] = useState(null);
@@ -98,8 +98,12 @@ function LinkContactsToClient() {
                 </>
             )}
         </div>
+
+        
     );
     
 }
 
-export default LinkContactsToClient;
+ 
+
+export default LinkClients ;   

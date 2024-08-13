@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function LinkClientsToContact() {
+
+function LinkContact() {
     const [contacts, setContacts] = useState([]);
     const [clients, setClients] = useState([]);
     const [selectedContact, setSelectedContact] = useState(null);
@@ -48,8 +49,12 @@ function LinkClientsToContact() {
     };
 
     return (
+        <div>
+      <h1 className="text-2xl font-bold mb-4">Link Contacts to Clients</h1>
+
+ 
         <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4">Link Contacts to Clients</h1>
+      
             <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2">
                     Select Contact
@@ -93,7 +98,8 @@ function LinkClientsToContact() {
                 Link Clients
             </button>
         </div>
+        </div>
     );
 }
 
-export default LinkClientsToContact;
+export default LinkContact;
