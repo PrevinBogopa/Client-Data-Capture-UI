@@ -33,7 +33,7 @@ function ClientList() {
                             <tr key={client.id}>
                                 <td className="text-left py-2 px-4 border-b">{client.name}</td>
                                 <td className="text-left py-2 px-4 border-b">{client.client_code}</td>
-                                <td className="text-center py-2 px-4 border-b">0</td> {/* Assuming 0 contacts for now */}
+                                <td className="text-center py-2 px-4 border-b">{client.contact_count}</td> {/* Displaying number of contacts */}
                             </tr>
                         ))}
                     </tbody>
