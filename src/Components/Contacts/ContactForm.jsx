@@ -6,6 +6,7 @@ function ContactForm() {
     const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
     const [error, setError] = useState(null);
+    const [createdContact, setCreatedContact] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -13,8 +14,10 @@ function ContactForm() {
 
         axios.post('http://localhost:8080/contacts', { name, surname, email })
             .then(response => {
-                alert('Contact created successfully!'); // Pop-up alert
-                // Optionally, clear the form fields
+                const { message } = response.data;
+                setCreatedContact(message);
+                alert('Contact created successfully!');  
+
                 setName('');
                 setSurname('');
                 setEmail('');
@@ -34,6 +37,11 @@ function ContactForm() {
             {error && (
                 <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 transition duration-300 ease-in-out">
                     <span className="text-lg font-bold">Error:</span> {error}
+                </div>
+            )}
+            {createdContact && (
+                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4 transition duration-300 ease-in-out">
+                    <span className="text-lg font-bold">Success:</span> {createdContact}
                 </div>
             )}
             <form onSubmit={handleSubmit}>
