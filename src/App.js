@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Client from './Components/Client';
 
 
-import ContactList from './Components/ContactList';
+import Contact from './Components/Contact';
  
 import Navbar from './Components/Navbar';
 
@@ -15,7 +15,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Client />} />
  
-                    <Route path="/contacts" element={<ContactList />} />
+                    <Route path="/contacts" element={<Contact  />} />
                    
  
                 </Routes>

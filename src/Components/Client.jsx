@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
  
-import LinkClients from './LinkClients';
-import ClientForm from './ClientForm';
-import LinkedContacts from './LinkedContacts';
+import LinkClients from './Clients/LinkClients';
+import ClientForm from './Clients/ClientForm';
+import LinkedContacts from './Clients/LinkedContacts';
  
-import ClientList from './ClientList';
+import ClientList from './Clients/ClientList';
 function Client () {
     const [selectedComponent, setSelectedComponent] = useState('ClientForm');
 
