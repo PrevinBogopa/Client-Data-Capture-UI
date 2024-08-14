@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ClientList from './Components/ClientList';
-import ClientForm from './Components/ClientForm';
+import Client from './Components/Client';
 
 
 import ContactList from './Components/ContactList';
@@ -14,7 +13,7 @@ function App() {
             <Navbar />
             <div className="container mx-auto p-4">
                 <Routes>
-                    <Route path="/" element={<ClientList />} />
+                    <Route path="/" element={<Client />} />
  
                     <Route path="/contacts" element={<ContactList />} />
                    

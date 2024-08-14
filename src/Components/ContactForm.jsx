@@ -9,10 +9,18 @@ function ContactForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setError(null); // Reset errors
+
         axios.post('http://localhost:8080/contacts', { name, surname, email })
-            .then(response => console.log('Contact created:', response.data))
+            .then(response => {
+                alert('Contact created successfully!'); // Pop-up alert
+                // Optionally, clear the form fields
+                setName('');
+                setSurname('');
+                setEmail('');
+            })
             .catch(error => {
-                if (error.response.status === 400) {
+                if (error.response && error.response.status === 400) {
                     setError('Email already exists');
                 } else {
                     setError('Error creating contact');
@@ -65,7 +73,7 @@ function ContactForm() {
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                 </div>
-                <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 ease-in-out">
+                <button type="submit" className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                     Create Contact
                 </button>
             </form>

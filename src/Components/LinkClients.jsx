@@ -54,7 +54,7 @@ function LinkClients() {
 
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-4 bg-white">
-            <h1 className="text-2xl font-bold mb-4 text-white">Link Client to Contacts</h1>
+            <h1 className="text-2xl font-bold mb-4 text-black">Link Client to Contacts</h1>
             {loading ? (
                 <p>Loading...</p>
             ) : (
