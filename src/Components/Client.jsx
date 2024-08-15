@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
  
 import LinkClients from './Clients/LinkClients';
 import ClientForm from './Clients/ClientForm';
@@ -66,12 +65,12 @@ function Client () {
                     </li>
                 </ul>
             </div>
-            {/* Main content area */}
+   
             <div className="w-3/4 p-4">
                 {renderContent()}
             </div>
 
-            {/* Right-aligned menu */}
+    
    
         </div>
     );
